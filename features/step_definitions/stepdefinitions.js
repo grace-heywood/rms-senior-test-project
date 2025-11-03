@@ -42,6 +42,7 @@ Then('only one track in the list has now_playing as true', async function() {
 
 Then('header should contain current date', async function() {
     await spec.expect(ctx => {
-    new Date(ctx.res.headers.date)
+    const currentInHeader = new Date(ctx.res.headers.date)
+    expect(currentInHeader.getTime()).to.not.be.NaN;
   });
 });
