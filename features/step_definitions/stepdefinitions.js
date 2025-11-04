@@ -4,9 +4,13 @@ const { Given, When, Then, Before } = require('@cucumber/cucumber');
 
 let spec = pactum.spec();
 
+// Test step definitions for the API features/rmstest.feature file.
+
 Before(() => {
   spec = pactum.spec();
 });
+
+// Step is a Given with the human readable step. Definition occurs within the {}. Used await to wait for the promise. 
 Given(/user makes a (.*) request to (.*)/, async function (method, endpoint) {
   await spec[method.toLowerCase()](endpoint);
 });
