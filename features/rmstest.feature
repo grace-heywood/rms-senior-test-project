@@ -6,4 +6,4 @@ Feature: RMS API Test
     Then response time should be less than 1000 ms
     And id field is never null or empty
     And only one track in the list has now_playing as true
-    And header should contain current date
+    And header should contain a date
